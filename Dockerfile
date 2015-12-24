@@ -17,6 +17,10 @@ ENV JAVA_OPTS "-javaagent:/tingyun/tingyun-agent-java.jar"
 
 RUN wget http://download.tingyun.com/agent/java/${TINGYUN_AGENT_VERSION}/tingyun-agent-java-${TINGYUN_AGENT_VERSION}.zip && \
     unzip tingyun-agent-java-${TINGYUN_AGENT_VERSION}.zip && \
-    sed -i "s#^nbs.license_key=.*#nbs.license_key=${TINGYUN_LICENSE_KEY}#g"  tingyun/tingyun.properties && \
-    sed -i "s#^nbs.app_name=.*#nbs.app_name=${TINGYUN_APP_NAME}#g"  tingyun/tingyun.properties && \
     rm tingyun-agent-java-${TINGYUN_AGENT_VERSION}.zip
+
+ADD set.sh /set.sh
+
+RUN chmod +x /set.sh
+
+CMD ["/set.sh"]
