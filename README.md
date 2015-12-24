@@ -1,6 +1,9 @@
 # tomcat
 Tomcat tingyun agent docker images
 
+## Base
+tomcat7.0.55 jdk1.7.0_67
+
 ## Build
 ```
 docker build -t tingyun/tomcat7:2.0.1 .
