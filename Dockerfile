@@ -23,4 +23,4 @@ ADD set.sh /set.sh
 
 RUN chmod +x /set.sh
 
-CMD ["/set.sh;/run.sh"]
+CMD /set.sh;/run.sh
