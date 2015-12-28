@@ -1,7 +1,7 @@
 FROM tutum/tomcat:7.0
 MAINTAINER wdxxs2z <jackyuan88726@gmail.com>
 
-RUN apt-get update && apt-get install -y unzip
+RUN apt-get update && apt-get install -y wget
 
 ENV PINPOINT_AGENT_VERSION 1.5.1
 
