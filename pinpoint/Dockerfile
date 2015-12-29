@@ -9,6 +9,8 @@ ENV PINPOINT_APP_NAME ApplicationName
 
 ENV PINPOINT_AGENT_ID Agent_Id
 
+ENV JAVA_OPTS "-javaagent:/pinpoint/pinpoint-agent-${PINPOINT_AGENT_VERSION}/pinpoint-bootstrap-${PINPOINT_AGENT_VERSION}.jar -Dpinpoint.agentId=${PINPOINT_AGENT_ID} -Dpinpoint.applicationName=${PINPOINT_APP_NAME}"
+
 ENV PINPOINT_PROFILER_COLLECTOR_IP 127.0.0.1
 
 ENV PINPOINT_HOME /pinpoint
