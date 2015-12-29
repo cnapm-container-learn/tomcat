@@ -33,5 +33,5 @@ docker run -i -d --env ONEAPM_LICENSE_KEY=your_license_key --env ONEAPM_APP_NAME
 
 ### pinpoint
 ```
-docker run -i -d --env PINPOINT_APP_NAME=your_app_name --env PINPOINT_AGENT_ID=your_app_agentId --env PINPOINT_PROFILER_COLLECTOR_IP=your_collector_ip -P -t pinpoint/tomcat7:1.5.1
+docker run -i -d -e JAVA_OPTS="-javaagent:/pinpoint/pinpoint-agent-1.5.1/pinpoint-bootstrap-1.5.1.jar -Dpinpoint.agentId=your_agent_id -Dpinpoint.applicationName=your_app_name" -e PINPOINT_PROFILER_COLLECTOR_IP=192.168.49.128 -P -t pinpoint/tomcat7:1.5.1
 ```
